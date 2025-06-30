@@ -1,0 +1,49 @@
+<!-- [Fixed Script Start] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy Data Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Energy Data Tracker</h1>
+    <button onclick="toggleTheme()" class="primary">Toggle Light/Dark Mode</button>
+    <button onclick="exportData()" class="primary">Export JSON</button>
+    <button onclick="importDataPrompt()" class="primary">Import JSON</button>
+    <button onclick="clearData()" class="error">Clear All Data</button>
+  </header>
+
+  <section id="section1" class="card">
+    <h2>Utility Contract Details</h2>
+    <div class="grid">
+      <div><label>Supplier Name<input class="input" id="supplier" onchange="saveContractDetails()" /></label></div>
+      <div><label>Contract End Date<input class="input" id="endDate" type="date" onchange="saveContractDetails()" /></label></div>
+      <div><label>Electricity Unit Rate<input class="input" id="elecRate" type="number" step="any" onchange="saveContractDetails()" /></label></div>
+      <div><label>Electricity Standing Charge<input class="input" id="elecStanding" type="number" step="any" onchange="saveContractDetails()" /></label></div>
+      <div><label>Gas Unit Rate<input class="input" id="gasRate" type="number" step="any" onchange="saveContractDetails()" /></label></div>
+      <div><label>Gas Standing Charge<input class="input" id="gasStanding" type="number" step="any" onchange="saveContractDetails()" /></label></div>
+    </div>
+  </section>
+
+  <section id="section2">
+    <div class="section-title">
+      <h2>Readings</h2>
+      <button onclick="addYearSection()" class="primary">Add Year</button>
+    </div>
+    <div id="yearSections"></div>
+  </section>
+
+  <section id="section3" class="card">
+    <h2>Energy Usage Charts</h2>
+    <select id="chartYear" onchange="updateCharts()"></select>
+    <canvas id="usageChart"></canvas>
+    <div class="grid" id="monthlySummary"></div>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

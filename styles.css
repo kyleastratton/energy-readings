@@ -1,0 +1,94 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #222;
+  --card: #fff;
+  --accent: #007acc;
+  --error: #f85149;
+}
+
+[data-theme="dark"] {
+  --bg: #1e1e1e;
+  --text: #f4f4f4;
+  --card: #2c2c2c;
+  --accent: #00b7ff;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header,
+section,
+footer {
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+button {
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reading-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.reading-row input,
+.reading-row select {
+  flex: 1;
+}
+
+.primary {
+  background-color: var(--accent);
+}
+
+.error {
+  background: var(--error);
+}
+
+.input {
+  width: 90%;
+}
+
+@media only screen and (max-width: 800px) {
+  input {
+    width: 90%;
+  }
+}
