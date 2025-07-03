@@ -13,6 +13,7 @@ function toggleTheme() {
 }
 
 function saveContractDetails() {
+    console.log("storing contract details")
   const data = {
     supplier: supplier.value,
     endDate: endDate.value,
@@ -242,4 +243,6 @@ window.addYearSection = addYearSection;
 window.saveContractDetails = saveContractDetails;
 window.updateCharts = updateCharts;
 
+loadContractDetails();
 loadReadings();
+updateCharts();
